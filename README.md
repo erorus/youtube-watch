@@ -49,6 +49,7 @@ yw.start();
 The following properties are read by YouTubeWatch:
   * **secret** - A private key used by Pubsubhubbub, it is not required to include this property but it is highly recommended that you do. Defaults to *'change me!'*
   * **hubCallback** - Your ip/domain name that will be used as a callback URL by Pubsubhubbub. It *must* be in a URL format, *ex: 'http://example.com/'*. This is a __required__ property as the default is undefined.
+  * **hubHost** - The host Pubsubhubbub will listen on. Defaults to *all*.
   * **hubPort** - The port Pubsubhubbub will listen on. This must be an open port on your system. Defaults to port *9001*.
   * **hubUrl** - The URL in which we listen to updates from. This shouldn't be changed unless you know what you're doing.
 

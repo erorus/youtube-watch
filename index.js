@@ -5,6 +5,7 @@ const xml = require('xml2js');
 const defaultOptions = {
 	secretKey: 'replace me!',
 	hubCallback: undefined,
+	hubHost: undefined,
 	hubPort: 9001,
 	hubUrl: 'http://pubsubhubbub.appspot.com/'
 };
@@ -62,7 +63,7 @@ class YouTubeWatch extends EventEmitter {
 			this.emit('error', new Error('YouTubeWatch has already been started'));
 			return;
 		}
-		this.hub.listen(this.options.hubPort, () => this.emit('start'));
+		this.hub.listen(this.options.hubPort, this.options.hubHost, () => this.emit('start'));
 	}
 	stop() {
 		if (this.hub.server && !this.hub.server.listening) {
